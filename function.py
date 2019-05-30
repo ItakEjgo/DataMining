@@ -129,7 +129,7 @@ def draw_mav(stock_name, win_size, result_value, begin_date):
     plt.ylabel('average value')
     plt.legend()
     plt.savefig(f'{stock_name}-{win_size}')
-    plt.show()
+    # plt.show()
     return f'{stock_name}-{win_size}.png'
 
 
@@ -149,7 +149,7 @@ def mavg_default(path, win_size):
     plt.ylabel('average value')
     plt.legend()
     plt.savefig(f'{stock_name}-default')
-    plt.show()
+    # plt.show()
     name1 = f'{stock_name}-default.png'
     result = moving_average(path, win_size)
     name2 = draw_mav(stock_name, win_size, result[0], result[1])
@@ -629,11 +629,11 @@ def fun_basic_analysis(path):
     ret = ret + '-' * 30 + '\n'
     ret = ret + 'profit: ' + str(profit[0]) + '\n'
     ret = ret + '-' * 30 + '\n'
-    ret = ret + 'final price increase； ' + str(final_increase) + '\n'
+    ret = ret + 'final price increase: ' + str(final_increase) + '\n'
     ret = ret + '-' * 30 + '\n'
     ret = ret + 'good stock: ' + str(flag) + '\n'
     ret = ret + '-' * 30 + '\n'
-    ret = ret + 'Conclusion:' + buy + '\n'
+    ret = ret + 'Conclusion: ' + buy + '\n'
     return ret
 
 
@@ -688,7 +688,7 @@ def compare_mvg(name1, name2, mvg1, mvg2):
     plt.ylabel('average value')
     plt.legend()
     plt.savefig(f'{name1} VS {name2}')
-    plt.show()
+    # plt.show()
     res = f'{name1} VS {name2}.png'
     return res
 
