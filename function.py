@@ -129,7 +129,7 @@ def draw_mav(stock_name, win_size, result_value, begin_date):
     plt.ylabel('average value')
     plt.legend()
     plt.savefig(f'{stock_name}-{win_size}')
-    plt.show()
+    #plt.show()
     return f'{stock_name}-{win_size}.png'
 
 
@@ -149,7 +149,8 @@ def mavg_default(path, win_size):
     plt.ylabel('average value')
     plt.legend()
     plt.savefig(f'{stock_name}-default')
-    plt.show()
+    #plt.show()
+    plt.cla()
     name1 = f'{stock_name}-default.png'
     result = moving_average(path, win_size)
     name2 = draw_mav(stock_name, win_size, result[0], result[1])
@@ -400,11 +401,16 @@ def get_rules(fp):
     labels = []
     ret = ''
     ret = ret + 'Analyse the associate rules\n'
-    ret = ret + 'A -> 连续增长30天\n'
-    ret = ret + 'B -> 连续下降20天\n'
-    ret = ret + 'C -> 增长天数大于下降天数\n'
-    ret = ret + 'D -> 最终价格大于初始价格\n'
-    ret = ret + 'E -> 盈利\n'
+    #ret = ret + 'A -> 连续增长30天\n'
+    ret = ret + 'A -> increasing for 30 days\n'
+    #ret = ret + 'B -> 连续下降20天\n'
+    ret = ret + 'B -> decreasing for 20 days\n'
+#    ret = ret + 'C -> 增长天数大于下降天数\n'
+    ret = ret + 'C -> increasing days >= decreasing days\n'
+    #ret = ret + 'D -> 最终价格大于初始价格\n'
+    ret = ret + 'D -> final price > initial price\n'
+    #ret = ret + 'E -> 盈利\n'
+    ret = ret + 'E -> profit\n'
 
     for path in fp:
         (data, date) = moving_average(path, 30)
@@ -688,7 +694,7 @@ def compare_mvg(name1, name2, mvg1, mvg2):
     plt.ylabel('average value')
     plt.legend()
     plt.savefig(f'{name1} VS {name2}')
-    # plt.show()
+    #plt.show()
     res = f'{name1} VS {name2}.png'
     return res
 

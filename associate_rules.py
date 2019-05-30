@@ -143,14 +143,14 @@ def associate(data_set):
     big_rules_list = generate_big_rules(L, support_data, min_conf=0.7)
     ret = ''
     for Lk in L:
-        ret = ret+'='*50+'\n'+"frequent " + str(len(list(Lk)[0])) + "-itemsets\t\tsupport"+'\n'+'='*50+'\n'
+        # ret = ret+'='*50+'\n'+"frequent " + str(len(list(Lk)[0])) + "-itemsets\t\tsupport"+'\n'+'='*50+'\n'
         # print("=" * 50)
         # print("frequent " + str(len(list(Lk)[0])) + "-itemsets\t\tsupport")
         # print("=" * 50)
         for freq_set in Lk:
-            ret = ret+str(freq_set)+str(support_data)+'\n'
+            # ret = ret+str(freq_set)+str(support_data)+'\n'
             print(freq_set, support_data[freq_set])
-    ret = ret+'\n'
+    # ret = ret+'\n'
     # print("Big Rules")
     ret = ret + 'Big Rules\n'
     for item in big_rules_list:
