@@ -129,7 +129,7 @@ def draw_mav(stock_name, win_size, result_value, begin_date):
     plt.ylabel('average value')
     plt.legend()
     plt.savefig(f'{stock_name}-{win_size}')
-    # plt.show()
+    plt.show()
     return f'{stock_name}-{win_size}.png'
 
 
@@ -149,7 +149,7 @@ def mavg_default(path, win_size):
     plt.ylabel('average value')
     plt.legend()
     plt.savefig(f'{stock_name}-default')
-    # plt.show()
+    plt.show()
     name1 = f'{stock_name}-default.png'
     result = moving_average(path, win_size)
     name2 = draw_mav(stock_name, win_size, result[0], result[1])
@@ -351,7 +351,7 @@ def DGIM(path1):
 
 
 def bloom_filter(fp, pattern):
-    ret = f'Query {pattern} pattern in date set\n '
+    ret = f'Query {pattern} pattern in date set\n'
     for path in fp:
         stock_name = os.path.basename(path)[:-4]
         mvg,date = moving_average(path,10)
